@@ -6,6 +6,8 @@ This template is based on the [Minimal Mistakes](https://mmistakes.github.io/min
 
 Edit the `_config.yml` file.
 
+Navigation: edit the `_data/navigation.yml` file to change to top navigation.
+
 Change the `assets/images/avatar.jpg` picture, make sure it is a square image otherwise the image will look like an ellipse, not a circle.
 
 Go to your project Settings / Pages, set source to the branch you are hosting the site on (`main`, `gh-pages`), from root (`/`). Click Save, set 'Enforce HTTPS` if you like.
