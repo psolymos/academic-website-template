@@ -12,6 +12,17 @@ Change the `assets/images/avatar.jpg` picture, make sure it is a square image ot
 
 Go to your project Settings / Pages, set source to the branch you are hosting the site on (`main`, `gh-pages`), from root (`/`). Click Save, set 'Enforce HTTPS` if you like.
 
+Use the yaml header as the following: the `author_profile` sets the profile in the sidebar.
+
+```yaml
+---
+title: Welcome!
+layout: academic
+author_profile: true
+---
+```
+
+
 !!! ADD HERE HOW TO SET UP CUSTOM DOMAIN !!!
 
 ## Build
