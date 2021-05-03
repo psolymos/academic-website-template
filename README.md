@@ -31,3 +31,6 @@ Categories: see the `_data/categories.yml` file for the different categories tha
 
 R code in the `_src` folder.
 
+## Etc
+
+Range slider is using <https://refreshless.com/nouislider/>

@@ -16,13 +16,20 @@ author_profile: true
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.css"/>
-<div id="slider"></div>
+<br>
+<div id="slider" style="width:300px;height:20px;"></div>
+<style>
+.noUi-handle {
+  width: 10px !important;
+  right: -5px !important; /*  must be (width / 2) * -1 */
+}
+</style>
 <script>
 var slider = document.getElementById('slider');
 noUiSlider.create(slider, {
-    start: [20, 80],
+    start: [2016, 2021],
     step: 1,
-    tooltips: [true, true],
+    tooltips: [wNumb({decimals: 0}), wNumb({decimals: 0})],
     connect: true,
     range: {
         'min': [2016],
