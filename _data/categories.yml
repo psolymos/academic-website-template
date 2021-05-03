@@ -1,11 +1,11 @@
 # these variables will be used as filters for publications
 publications:
-  - years: [2021, 2020, 2016]
-  - types: ["empirical", "methods"]
-  - authorship: ["first", "middle", "last"]
-  - status: ["inprep", "inpress", "published"]
+  years: [2021, 2020, 2016]
+  types: ["empirical", "methods"]
+  authorship: ["first", "middle", "last"]
+  status: ["inprep", "inpress", "published"]
 
 # these variables will be used as filters for software
 software:
-  - language: ["R", "Stata"]
-  - type: ["App", "CLI"]
+  language: ["R", "Stata"]
+  type: ["App", "CLI"]
