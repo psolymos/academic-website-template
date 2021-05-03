@@ -9,12 +9,7 @@ author_profile: true
   <p>{% for v in site.data.categories.publications.types %}<div class="btn btn--unselected select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
   <p>{% for v in site.data.categories.publications.authorship %}<div class="btn btn--unselected select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
   <p>{% for v in site.data.categories.publications.status %}<div class="btn btn--unselected select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
-
 </aside>
-
-These selectors will come here eventually:
-
-- Years: {% for y in site.data.categories.publications.years %} {{ y }}{% endfor %}
 
 {% for yr in site.data.categories.publications.years %}
 <h2 id="year-{{ yr }}">{{ yr }}</h2>
