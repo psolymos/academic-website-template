@@ -12,7 +12,7 @@ author_profile: true
 </ul>
 </aside>
 
-Selectors will come here:
+These selectors will come here:
 
 - Years: {% for y in site.data.categories.publications.years %} {{ y }}{% endfor %}
 - Types: {% for ty in site.data.categories.publications.types %} {{ ty }}{% endfor %}
