@@ -168,24 +168,28 @@ div[slider] > input[type=range]::-ms-tooltip {
       <span id="value">100</span>
     </div>
   </div>
-  <input type="range" value="0" max="100" min="0" step="1" oninput="
-  this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
-  let value = (this.value/parseInt(this.max))*100
-  var children = this.parentNode.childNodes[1].childNodes;
-  children[1].style.width=value+'%';
-  children[5].style.left=value+'%';
-  children[7].style.left=value+'%';children[11].style.left=value+'%';
-  children[11].childNodes[1].innerHTML=this.value;" />
+  <input type="range" value="0" max="100" min="0" step="1" oninput="this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);let value = (this.value/parseInt(this.max))*100var children = this.parentNode.childNodes[1].childNodes;children[1].style.width=value+'%';children[5].style.left=value+'%';children[7].style.left=value+'%';children[11].style.left=value+'%';children[11].childNodes[1].innerHTML=this.value;" />
 
-  <input type="range" value="100" max="100" min="0" step="1" oninput="
-  this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
-  let value = (this.value/parseInt(this.max))*100
-  var children = this.parentNode.childNodes[1].childNodes;
-  children[3].style.width=(100-value)+'%';
-  children[5].style.right=(100-value)+'%';
-  children[9].style.left=value+'%';children[13].style.left=value+'%';
-  children[13].childNodes[1].innerHTML=this.value;" />
+  <input type="range" value="100" max="100" min="0" step="1" oninput="this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));let value = (this.value/parseInt(this.max))*100var children = this.parentNode.childNodes[1].childNodes;children[3].style.width=(100-value)+'%';children[5].style.right=(100-value)+'%';children[9].style.left=value+'%';children[13].style.left=value+'%';children[13].childNodes[1].innerHTML=this.value;" />
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.js" integrity="sha512-6vo59lZMHB6GgEySnojEnfhnugP7LR4qm6akxptNOw/KW+i9o9MK4Gaia8f/eJATjAzCkgN3CWlIHWbVi2twpg==" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.css" integrity="sha512-kSH0IqtUh1LRE0tlO8dWN7rbmdy5cqApopY6ABJ4U99HeKulW6iKG5KgrVfofEXQOYtdQGFjj2N/DUBnj3CNmQ==" crossorigin="anonymous" />
+<div id="slider">
+</div>
+<script>
+var slider = document.getElementById('slider');
+noUiSlider.create(slider, {
+    start: [20, 80],
+    step: 1,
+    connect: true,
+    range: {
+        'min': [2016],
+        'max': [2021]
+    }
+});
+</script>
+
 
 <!-- listing -->
 {% for yr in site.data.categories.publications.years %}
