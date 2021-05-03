@@ -22,6 +22,8 @@ author_profile: true
 ---
 ```
 
+Categories: see the `_data/categories.yml` file for the different categories that publications or software can be classified under (besides year which is kept numeric, all in press/in prep papers should get the current year and updated as published). The category `id` should match the corresponding element in the `_data/publications.yml` file, e.g. `type: "published"` etc. This is important because the IDs are used to show/hide the list elements on the page.
+
 
 !!! ADD HERE HOW TO SET UP CUSTOM DOMAIN !!!
 
