@@ -95,4 +95,13 @@
   &--small {
     font-size: $type-size-7;
   }
+
+  /* selected/unselected button */
+  &--unselected {
+    color: $primary-color;
+  }
+  &--selected {
+    color: $info-color;
+  }
+
 }
