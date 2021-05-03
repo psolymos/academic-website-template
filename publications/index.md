@@ -7,24 +7,14 @@ author_profile: true
 <aside class="sidebar__control sticky">
 
 <form>
-  {% for v in site.data.categories.publications.types %}
-  <input type="checkbox" id="select-type-{{ v }}" name="select-type-{{ v }}" value="{{ v }}">
-  <label for="select-type-{{ v }}"> x {{ v }}</label><br>
-  {% endfor %}
-  {% for v in site.data.categories.publications.authorship %}
-  <input type="checkbox" id="select-type-{{ v }}" name="select-type-{{ v }}" value="{{ v }}">
-  <label for="select-type-{{ v }}"> x {{ v }}</label><br>
-  {% endfor %}
-  {% for v in site.data.categories.publications.status %}
-  <input type="checkbox" id="select-type-{{ v }}" name="select-type-{{ v }}" value="{{ v }}">
-  <label for="select-type-{{ v }}"> x {{ v }}</label><br>
-  {% endfor %}
+  {% for v in site.data.categories.publications.types %}<button class="select-type-{{ v }}">{{ v }}</button><br>{% endfor %}
+  {% for v in site.data.categories.publications.status %}<button class="select-type-{{ v }}">{{ v }}</button><br>{% endfor %}
 
 </form>
 
 </aside>
 
-These selectors will come here eventually...
+These selectors will come here eventually
 
 - Years: {% for y in site.data.categories.publications.years %} {{ y }}{% endfor %}
 - Types: {% for ty in site.data.categories.publications.types %} {{ ty }}{% endfor %}
