@@ -24,7 +24,7 @@ author_profile: true
 
 </aside>
 
-These selectors will come here eventually:
+These selectors will come here eventually...
 
 - Years: {% for y in site.data.categories.publications.years %} {{ y }}{% endfor %}
 - Types: {% for ty in site.data.categories.publications.types %} {{ ty }}{% endfor %}
