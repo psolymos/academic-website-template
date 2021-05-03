@@ -13,6 +13,9 @@ author_profile: true
 </aside>
 
 <!-- slider for years -->
+<link rel="stylesheet" href="https://demos.jquerymobile.com/1.4.2/css/themes/default/jquery.mobile-1.4.2.min.css">
+<script src="https://demos.jquerymobile.com/1.4.2/js/jquery.js"></script>
+<script src="https://demos.jquerymobile.com/1.4.2/js/jquery.mobile-1.4.2.min.js"></script>
 <style>
 .ui-slider .ui-btn-inner {
     padding: 4px 0 0 0 !important;
