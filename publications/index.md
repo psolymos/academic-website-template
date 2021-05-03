@@ -6,18 +6,15 @@ author_profile: true
 
 <aside class="sidebar__control sticky">
 
-  <p>{% for v in site.data.categories.publications.types %}<div class="btn select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
-  <p>{% for v in site.data.categories.publications.authorship %}<div class="btn select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
-  <p>{% for v in site.data.categories.publications.status %}<div class="btn select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
+  <p>{% for v in site.data.categories.publications.types %}<div class="btn btn--light-outline select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
+  <p>{% for v in site.data.categories.publications.authorship %}<div class="btn btn--primary select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
+  <p>{% for v in site.data.categories.publications.status %}<div class="btn btn--inverse select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
 
 </aside>
 
 These selectors will come here eventually:
 
 - Years: {% for y in site.data.categories.publications.years %} {{ y }}{% endfor %}
-- Types: {% for ty in site.data.categories.publications.types %} {{ ty }}{% endfor %}
-- Authorship: {% for au in site.data.categories.publications.authorship %} {{ au }}{% endfor %}
-- Types: {% for st in site.data.categories.publications.status %} {{ st }}{% endfor %}
 
 {% for yr in site.data.categories.publications.years %}
 <h2 id="year-{{ yr }}">{{ yr }}</h2>
