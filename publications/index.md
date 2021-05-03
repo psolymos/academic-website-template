@@ -6,15 +6,12 @@ author_profile: true
 
 <aside class="sidebar__control sticky">
 
-<form>
-  {% for v in site.data.categories.publications.types %}<button class="select-type-{{ v }}">{{ v }}</button><br>{% endfor %}
-  {% for v in site.data.categories.publications.status %}<button class="select-type-{{ v }}">{{ v }}</button><br>{% endfor %}
-
-</form>
+  <p>{% for v in site.data.categories.publications.types %}<div class="btn select-type-{{ v }}">{{ v }}</div>{% endfor %}</p>
+  <p>{% for v in site.data.categories.publications.status %}<div class="btn select-type-{{ v }}">{{ v }}</div>{% endfor %}</p>
 
 </aside>
 
-These selectors will come here eventually
+These selectors will come here eventually:
 
 - Years: {% for y in site.data.categories.publications.years %} {{ y }}{% endfor %}
 - Types: {% for ty in site.data.categories.publications.types %} {{ ty }}{% endfor %}
