@@ -4,6 +4,14 @@ layout: academic
 author_profile: true
 ---
 
+<aside class="sidebar__right ">
+<p>Right sidebar</p>
+<ul>
+<li>Control 1</li>
+<li>Control 2</li>
+</ul>
+</aside>
+
 Selectors will come here:
 
 - Years: {% for y in site.data.categories.publications.years %} {{ y }}{% endfor %}
