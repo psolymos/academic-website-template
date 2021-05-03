@@ -18,7 +18,7 @@ author_profile: true
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/12.0.0/nouislider.min.css"/>
 <br>
-<div id="slider" style="width:300px;display:flex;justify-content:center;"></div>
+<p style="text-align:center;"><div id="slider" style="width:50%;"></div></p>
 <script>
 var slider = document.getElementById('slider');
 noUiSlider.create(slider, {
