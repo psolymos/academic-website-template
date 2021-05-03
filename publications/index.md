@@ -6,8 +6,9 @@ author_profile: true
 
 <aside class="sidebar__control sticky">
 
-  <p>{% for v in site.data.categories.publications.types %}<div class="btn select-type-{{ v }}">{{ v }}</div>{% endfor %}</p>
-  <p>{% for v in site.data.categories.publications.status %}<div class="btn select-type-{{ v }}">{{ v }}</div>{% endfor %}</p>
+  <p>{% for v in site.data.categories.publications.types %}<div class="btn select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
+  <p>{% for v in site.data.categories.publications.authorship %}<div class="btn select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
+  <p>{% for v in site.data.categories.publications.status %}<div class="btn select-type-{{ v.id }}">{{ v.name }}</div>{% endfor %}</p>
 
 </aside>
 
