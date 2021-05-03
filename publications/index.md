@@ -5,11 +5,22 @@ author_profile: true
 ---
 
 <aside class="sidebar__control sticky">
-<p>Right sidebar</p>
-<ul>
-<li>Control 1</li>
-<li>Control 2</li>
-</ul>
+
+<form>
+  {% for v in site.data.categories.publications.types %}
+  <input type="checkbox" id="select-type-{{ v }}" name="select-type-{{ v }}" value="{{ v }}">
+  <label for="select-type-{{ v }}"> {{ v }}</label><br>
+  {% endfor %}
+  {% for v in site.data.categories.publications.authorship %}
+  <input type="checkbox" id="select-type-{{ v }}" name="select-type-{{ v }}" value="{{ v }}">
+  <label for="select-type-{{ v }}"> {{ v }}</label><br>
+  {% endfor %}
+  {% for v in site.data.categories.publications.status %}
+  <input type="checkbox" id="select-type-{{ v }}" name="select-type-{{ v }}" value="{{ v }}">
+  <label for="select-type-{{ v }}"> {{ v }}</label><br>
+  {% endfor %}
+</form>
+
 </aside>
 
 These selectors will come here eventually:
