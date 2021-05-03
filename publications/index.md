@@ -9,16 +9,17 @@ author_profile: true
 <form>
   {% for v in site.data.categories.publications.types %}
   <input type="checkbox" id="select-type-{{ v }}" name="select-type-{{ v }}" value="{{ v }}">
-  <label for="select-type-{{ v }}"> {{ v }}</label><br>
+  <label for="select-type-{{ v }}"> x {{ v }}</label><br>
   {% endfor %}
   {% for v in site.data.categories.publications.authorship %}
   <input type="checkbox" id="select-type-{{ v }}" name="select-type-{{ v }}" value="{{ v }}">
-  <label for="select-type-{{ v }}"> {{ v }}</label><br>
+  <label for="select-type-{{ v }}"> x {{ v }}</label><br>
   {% endfor %}
   {% for v in site.data.categories.publications.status %}
   <input type="checkbox" id="select-type-{{ v }}" name="select-type-{{ v }}" value="{{ v }}">
-  <label for="select-type-{{ v }}"> {{ v }}</label><br>
+  <label for="select-type-{{ v }}"> x {{ v }}</label><br>
   {% endfor %}
+
 </form>
 
 </aside>
