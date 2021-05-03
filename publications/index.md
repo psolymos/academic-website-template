@@ -4,7 +4,7 @@ layout: academic
 author_profile: true
 ---
 
-<aside class="sidebar__right ">
+<aside class="sidebar__control ">
 <p>Right sidebar</p>
 <ul>
 <li>Control 1</li>
