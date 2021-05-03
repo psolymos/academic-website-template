@@ -32,6 +32,11 @@ noUiSlider.create(slider, {
     }
 });
 </script>
+<style>
+.noUi-connect {
+  background: #52adc8;
+}
+</style>
 
 <!-- listing -->
 {% for yr in site.data.categories.publications.years %}
