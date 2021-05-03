@@ -22,7 +22,7 @@ var slider = document.getElementById('slider');
 noUiSlider.create(slider, {
     start: [20, 80],
     step: 1,
-    tooltips: [true, true]
+    tooltips: [true, true],
     connect: true,
     range: {
         'min': [2016],
