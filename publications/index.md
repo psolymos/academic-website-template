@@ -58,7 +58,7 @@ let p = {
     {
         "id": "{{ ms.id }}",
         "text": "{{ ms.text }}"
-        "year": {{ ms.year }}
+        "year": {{ ms.year }},
         "type": "{{ ms.type }}",
         "authorship": "{{ ms.authorship }}",
         "status": "{{ ms.status }}",
