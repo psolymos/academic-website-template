@@ -48,24 +48,35 @@ noUiSlider.create(slider, {
     </li>
 {% endif %}{% endfor %}
 </ul>
+<div id="app">
+</div>
+
 {% endfor %}
 <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
-
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 <script>
-// data object
-let p = [{% for ms in site.data.publications %}{
-        "id": "{{ ms.id }}",
-        "text": "{{ ms.text }}",
-        "year": {{ ms.year }},
-        "type": "{{ ms.type }}",
-        "authorship": "{{ ms.authorship }}",
-        "status": "{{ ms.status }}",
-        "preprint": "{{ ms.preprint }}",
-        "datarepo": "{{ ms.datarepo }}",
-        "rpackagename": "{{ ms.rpackagename }}",
-        "rpackagelink": "{{ ms.rpackagelink }}",
-        "webappname": "{{ ms.webappname }}",
-        "webapplink": "{{ ms.webapplink }}",
-        "doi": "{{ ms.doi }}"
-    }{% unless forloop.last %},{% endunless %}{% endfor %}]
+document.addEventListener("DOMContentLoaded", function () {
+  new Vue({
+    el: "#app",
+    data: {
+      pubs: [
+        {% for ms in site.data.publications %}{
+          "id": "{{ ms.id }}",
+          "text": "{{ ms.text }}",
+          "year": {{ ms.year }},
+          "type": "{{ ms.type }}",
+          "authorship": "{{ ms.authorship }}",
+          "status": "{{ ms.status }}",
+          "preprint": "{{ ms.preprint }}",
+          "datarepo": "{{ ms.datarepo }}",
+          "rpackagename": "{{ ms.rpackagename }}",
+          "rpackagelink": "{{ ms.rpackagelink }}",
+          "webappname": "{{ ms.webappname }}",
+          "webapplink": "{{ ms.webapplink }}",
+          "doi": "{{ ms.doi }}"
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}],
+    },
+  });
+});
 </script>
