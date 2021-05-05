@@ -50,3 +50,26 @@ noUiSlider.create(slider, {
 </ul>
 {% endfor %}
 <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script>
+
+<script>
+// data object
+let p = {
+    {% for ms in site.data.publications %}
+    {
+        "id": "{{ ms.id }}",
+        "text": "{{ ms.text }}"
+        "year": {{ ms.year }}
+        "type": "{{ ms.type }}",
+        "authorship": "{{ ms.authorship }}",
+        "status": "{{ ms.status }}",
+        "preprint": "{{ ms.preprint }}",
+        "datarepo": "{{ ms.datarepo }}",
+        "rpackagename": "{{ ms.rpackagename }}",
+        "rpackagelink": "{{ ms.rpackagelink }}",
+        "webappname": "{{ ms.webappname }}",
+        "webapplink": "{{ ms.webapplink }}",
+        "doi": "{{ ms.doi }}",
+    },
+    {% endfor %}
+}
+</script>
