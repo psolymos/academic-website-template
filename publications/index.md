@@ -55,7 +55,7 @@ noUiSlider.create(slider, {
 // data object
 let p = [{% for ms in site.data.publications %}{
         "id": "{{ ms.id }}",
-        "text": "{{ ms.text }}"
+        "text": "{{ ms.text }}",
         "year": {{ ms.year }},
         "type": "{{ ms.type }}",
         "authorship": "{{ ms.authorship }}",
