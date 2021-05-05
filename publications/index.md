@@ -53,9 +53,7 @@ noUiSlider.create(slider, {
 
 <script>
 // data object
-let p = {
-    {% for ms in site.data.publications %}
-    {
+let p = [{% for ms in site.data.publications %}{
         "id": "{{ ms.id }}",
         "text": "{{ ms.text }}"
         "year": {{ ms.year }},
@@ -68,8 +66,6 @@ let p = {
         "rpackagelink": "{{ ms.rpackagelink }}",
         "webappname": "{{ ms.webappname }}",
         "webapplink": "{{ ms.webapplink }}",
-        "doi": "{{ ms.doi }}",
-    },
-    {% endfor %}
-}
+        "doi": "{{ ms.doi }}"
+    }{% unless forloop.last %},{% endunless %}{% endfor %}]
 </script>
