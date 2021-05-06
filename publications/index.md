@@ -15,17 +15,6 @@ author_profile: true
 }
 </style>
 <script>
-var slider = document.getElementById('slider');
-noUiSlider.create(slider, {
-    start: [2016, 2021],
-    step: 1,
-    tooltips: [wNumb({decimals: 0}), wNumb({decimals: 0})],
-    connect: true,
-    range: {
-        'min': [2016],
-        'max': [2021]
-    }
-});
 document.addEventListener("DOMContentLoaded", function () {
   new Vue({
     el: "#app",
@@ -52,6 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 <div id="app">
+<p>This is Vue</p>
+</div>
+
   <!-- selectors -->
   <aside class="sidebar__control sticky">
     <p><div class="btn btn--selected select-all">Show all</div></p>
@@ -71,4 +63,17 @@ document.addEventListener("DOMContentLoaded", function () {
       </li>{% endif %}{% endfor %}
   </ul>
   {% endfor %}
-</div>
+
+<script>
+var slider = document.getElementById('slider');
+noUiSlider.create(slider, {
+    start: [2016, 2021],
+    step: 1,
+    tooltips: [wNumb({decimals: 0}), wNumb({decimals: 0})],
+    connect: true,
+    range: {
+        'min': [2016],
+        'max': [2021]
+    }
+});
+</script>
