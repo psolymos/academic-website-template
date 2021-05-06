@@ -8,7 +8,7 @@ author_profile: true
 <script src="https://unpkg.com/vue@3.0.4/dist/vue.global.prod.js"></script>
 <script src="https://unpkg.com/@vueform/slider"></script>
 
-{% raw %}
+<!-- {% raw %} -->
 <div id="app">
 
     <p><br></p>
@@ -66,11 +66,12 @@ author_profile: true
         <ul class="publist">
             <div v-for="pub in publ.filter(a => (a.year === yr))">
             <li class="publist">{{ pub.text }} &ndash; links and stuff comes here ...</li>
+            </div>
         </ul>
       </div>
   
 </div>
-{% endraw %}
+<!-- {% endraw %} -->
 
 <script>
 
@@ -306,4 +307,3 @@ li.publist{
 .slider-vertical .slider-draggable{cursor:ns-resize}
 .slider-handle{width:16px;height:16px;border-radius:50%;background:#fff;border:0;right:-8px;box-shadow:.5px .5px 2px 1px rgba(0,0,0,.32);cursor:-webkit-grab;cursor:grab}.slider-handle:focus{outline:none}.slider-active{box-shadow:.5px .5px 2px 1px rgba(0,0,0,.42);cursor:-webkit-grabbing;cursor:grabbing}[disabled] .slider-connect{background:#b8b8b8}[disabled].slider-handle,[disabled] .slider-handle,[disabled].slider-target{cursor:not-allowed}[disabled] .slider-tooltip{background:#b8b8b8;border-color:#b8b8b8}.slider-tooltip{position:absolute;display:block;font-size:14px;font-weight:500;white-space:nowrap;padding:2px 5px;min-width:20px;text-align:center;color:#fff;border-radius:5px;border:1px solid #52adc8;background:#52adc8}.slider-horizontal .slider-tooltip{transform:translate(-50%);left:50%;bottom:24px}.slider-horizontal .slider-tooltip:before{content:"";position:absolute;bottom:-10px;left:50%;width:0;height:0;border:5px solid transparent;border-top-color:inherit;transform:translate(-50%)}.slider-vertical .slider-tooltip{transform:translateY(-50%);top:50%;right:24px}.slider-vertical .slider-tooltip:before{content:"";position:absolute;right:-10px;top:50%;width:0;height:0;border:5px solid transparent;border-left-color:inherit;transform:translateY(-50%)}.slider-horizontal .slider-origin>.slider-tooltip{transform:translate(50%);left:auto;bottom:14px}.slider-vertical .slider-origin>.slider-tooltip{transform:translateY(-18px);top:auto;right:18px}.slider-pips,.slider-pips *{box-sizing:border-box}.slider-pips{position:absolute;color:#999}.slider-value{position:absolute;white-space:nowrap;text-align:center}.slider-value-sub{color:#ccc;font-size:10px}.slider-marker{position:absolute;background:#ccc}.slider-marker-large,.slider-marker-sub{background:#aaa}.slider-pips-horizontal{padding:10px 0;height:80px;top:100%;left:0;width:100%}.slider-value-horizontal{transform:translate(-50%,50%)}.slider-rtl .slider-value-horizontal{transform:translate(50%,50%)}.slider-marker-horizontal.slider-marker{margin-left:-1px;width:2px;height:5px}.slider-marker-horizontal.slider-marker-sub{height:10px}.slider-marker-horizontal.slider-marker-large{height:15px}.slider-pips-vertical{padding:0 10px;height:100%;top:0;left:100%}.slider-value-vertical{transform:translateY(-50%);padding-left:25px}.slider-rtl .slider-value-vertical{transform:translateY(50%)}.slider-marker-vertical.slider-marker{width:5px;height:2px;margin-top:-1px}.slider-marker-vertical.slider-marker-sub{width:10px}.slider-marker-vertical.slider-marker-large{width:15px}
 </style>
-
