@@ -41,7 +41,7 @@ author_profile: true
       </ul>
     </div>
     <div v-for="sof in softw">
-        <h3>{{ sof.name }}</h3>
+        <h2>{{ sof.name }}</h2>
         <ul class="softlist">
           <li>
           {{ sof.description }}
