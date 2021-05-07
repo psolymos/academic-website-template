@@ -42,10 +42,10 @@ author_profile: true
     </div>
     <p>{{ show }}</p>
     <p>{{ softw }}</p>
-    <div v-for="s in softw">
-        <h3>{{ s.name }}</h3>
-        <p>{{ s.description }}</p>
-        <p><a v-bind:href="s.link">{{ s.type }}</a> / {{ s.domain }}</p>
+    <div v-for="sof in softw">
+        <h3>{{ sof.name }}</h3>
+        <p>{{ sof.description }}</p>
+        <p><a v-bind:href="sof.link">{{ sof.type }}</a> / {{ sof.domain }}</p>
     </div>
 </div>
 <!-- {% endraw %} -->
@@ -53,12 +53,12 @@ author_profile: true
 <script>
 // software list
 var sw = [
-        {% for s in site.data.software %}{
-          "name": "{{ s.name }}",
-          "description": "{{ s.description }}",
-          "link": "{{ s.link }}",
-          "type": "{{ s.type }}",
-          "domain": "{{ s.domain }}"
+        {% for ss in site.data.software %}{
+          "name": "{{ ss.name }}",
+          "description": "{{ ss.description }}",
+          "link": "{{ ss.link }}",
+          "type": "{{ ss.type }}",
+          "domain": "{{ ss.domain }}"
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}];
 //vue app
