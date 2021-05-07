@@ -76,67 +76,23 @@ author_profile: true
 <script>
 
 var p = [
-        {
-          "id": "Mathur2021a",
-          "text": "Mathur MB, Peacock J, Reichling DB, Nadler J, Bain PA, Gardner CD, Robinson TN (2021). Interventions to reduce meat consumption by appealing to animal welfare: Meta-analysis and evidence-based recommendations. Appetite. In press.",
-          "year": 2021,
-          "type": "empirical",
-          "authorship": "first",
-          "status": "inpress",
-          "preprint": "https://osf.io/bc2wy/",
-          "datarepo": "https://osf.io/8zsw7/",
-          "rpackagename": "",
-          "rpackagelink": "",
-          "webappname": "",
-          "webapplink": "",
-          "doi": ""
-        },
-      {
-          "id": "Mathur2021b",
-          "text": "Mathur MB & VanderWeele TJ (under revision). Meta-Regression Methods to Characterize Evidence Strength Using Meaningful-Effect Percentages Conditional on Study Characteristics.",
-          "year": 2021,
-          "type": "methods",
-          "authorship": "first",
-          "status": "inprep",
-          "preprint": "https://osf.io/bmtdq/",
-          "datarepo": "https://osf.io/gs7fp/",
-          "rpackagename": "",
-          "rpackagelink": "",
-          "webappname": "",
-          "webapplink": "",
-          "doi": ""
-        },
-      {
-          "id": "Mathur2020",
-          "text": "Mathur MB & VanderWeele TJ (2020). Sensitivity analysis for unmeasured confounding in meta-analyses. Journal of the American Statistical Association, 115(529), 163-170.",
-          "year": 2020,
-          "type": "methods",
-          "authorship": "first",
-          "status": "published",
-          "preprint": "",
-          "datarepo": "https://osf.io/2r3gm/",
-          "rpackagename": "EValue",
-          "rpackagelink": "https://CRAN.R-project.org/package=EValue",
-          "webappname": "EValue Calculator",
-          "webapplink": "https://www.evalue-calculator.com/meta/",
-          "doi": "10.1080/01621459.2018.1529598"
-        },
-      {
-          "id": "Mummah2016",
-          "text": "Mummah, SA, Mathur MB, King AC, Gardner CD, Sutton S (2016). Mobile technology for vegetable consumption: a randomized controlled pilot study in overweight adults. JMIR mHealth and uHealth, 4(2), e51.",
-          "year": 2016,
-          "type": "methods",
-          "authorship": "middle",
-          "status": "published",
-          "preprint": "",
-          "datarepo": "",
-          "rpackagename": "",
-          "rpackagelink": "",
-          "webappname": "",
-          "webapplink": "",
-          "doi": "10.2196/mhealth.5146"
-        }
-      ];
+        {% for ms in site.data.publications %}{
+          "id": "{{ ms.id }}",
+          "text": "{{ ms.text }}",
+          "year": {{ ms.year }},
+          "type": "{{ ms.type }}",
+          "authorship": "{{ ms.authorship }}",
+          "status": "{{ ms.status }}",
+          "preprint": "{{ ms.preprint }}",
+          "datarepo": "{{ ms.datarepo }}",
+          "rpackagename": "{{ ms.rpackagename }}",
+          "rpackagelink": "{{ ms.rpackagelink }}",
+          "webappname": "{{ ms.webappname }}",
+          "webapplink": "{{ ms.webapplink }}",
+          "doi": "{{ ms.doi }}"
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}];
+
 var yrs = [...new Set(p.map(a => a.year))].sort().reverse();
 
 const app = Vue.createApp({
