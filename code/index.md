@@ -97,7 +97,11 @@ const app = Vue.createApp({
                 x[i] = this.swa[i];
         } */
         for (i = 0; i < this.swa.length; i++) {
-            x[i] = this.swa[i];
+            let add = false;
+            if (!this.show.rpkg && !this.show.stata && !this.show.gui && !this.show.statistics && !this.show.psychology)
+                add = true;
+            if (add)
+                x[i] = this.swa[i];
         }
         return x
     }
