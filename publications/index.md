@@ -4,31 +4,17 @@ layout: academic
 author_profile: true
 ---
 
-
-<!-- 
-  {% for yr in site.data.categories.publications.years %}
-  <h2 id="year-{{ yr }}">{{ yr }}</h2>
-  <ul>{% for ms in site.data.publications %}{% if ms.year == yr %}
-    <li id="publ-id-{{ ms.id }}" class="publ publ-type-{{ ms.type }} publ-auth-{{ ms.authorship }} publ-status-{{ ms.status }}">
-      {{ ms.text }}{% if ms.preprint %}&mdash; <a href="{{ ms.preprint }}">Preprint</a>{% endif %}{% if ms.datarepo %}&mdash; <a href="{{ ms.datarepo }}">Data repository</a>{% endif %}{% if ms.rpackagename %}&mdash; <a href="{{ ms.rpackagelink }}">{{ ms.rpackagename }}</a>{% endif %}{% if ms.webappname %}&mdash; <a href="{{ ms.webapplink }}">{{ ms.webappname }}</a>{% endif %}{% if ms.doi %} <div data-badge-popover="bottom" style="display: inline-block;" data-badge-type="4" data-doi="{{ ms.doi }}" data-hide-no-mentions="true" class="altmetric-embed"></div>{% endif %}
-      </li>{% endif %}{% endfor %}
-  </ul>
-  {% endfor %}
--->
-
-
 <!-- {% raw %} -->
 <div id="app">
-
-    <p><br></p>
-    <p style="width:60%;">
-        <Slider
-          v-model="yearslider.value"
-          v-bind="yearslider"
-        ></Slider>
-    </p>
-
-    <ul>
+    <div>
+      <p><br></p>
+      <p style="width:60%;">
+          <Slider
+            v-model="yearslider.value"
+            v-bind="yearslider"
+          ></Slider>
+      </p>
+      <ul>
         <li class="checkboxlist">
         Type
         <label class="container">Empirical
@@ -62,23 +48,16 @@ author_profile: true
                 <span class="checkmark"></span>
             </label>
         </li>
-    </ul>
-    
-      <!-- <div class="output">Year range: {{ yearslider.value }}</div>
-      <div>All years: {{ allyears }}</div>
-      <div>Show: {{ show }}</div> -->
-      
-      
-
-      <div v-for="yr in [...new Set(publ.map(a => a.year))].sort().reverse()">
-        <h2>{{ yr }}</h2>
-        <ul class="publist">
-            <div v-for="pub in publ.filter(a => (a.year === yr))">
-              <li class="publist">{{ pub.text }}<span v-if="pub.preprint != ''"> &mdash; <a v-bind:href="pub.preprint">Preprint</a></span><span v-if="pub.datarepo != ''"> &mdash; <a v-bind:href="pub.datarepo">Data repository</a></span><span v-if="pub.rpackagename != ''"> &mdash; <a v-bind:href="pub.rpackagelink">{{ pub.rpackagename }}</a></span><span v-if="pub.webappname != ''"> &mdash; <a v-bind:href="pub.webapplink">{{ pub.webappname }}</a></span><span v-if="pub.doi != ''">&nbsp;<div data-badge-popover="bottom" style="display: inline-block;" data-badge-type="4" v-bind:data-doi="pub.doi" data-hide-no-mentions="true" class="altmetric-embed"></div></span></li>
-            </div>
-        </ul>
-      </div>
-  
+      </ul>
+    </div>
+    <div v-for="yr in [...new Set(publ.map(a => a.year))].sort().reverse()">
+      <h2>{{ yr }}</h2>
+      <ul class="publist">
+        <div v-for="pub in publ.filter(a => (a.year === yr))">
+          <li class="publist">{{ pub.text }}<span v-if="pub.preprint != ''"> &mdash; <a v-bind:href="pub.preprint">Preprint</a></span><span v-if="pub.datarepo != ''"> &mdash; <a v-bind:href="pub.datarepo">Data repository</a></span><span v-if="pub.rpackagename != ''"> &mdash; <a v-bind:href="pub.rpackagelink">{{ pub.rpackagename }}</a></span><span v-if="pub.webappname != ''"> &mdash; <a v-bind:href="pub.webapplink">{{ pub.webappname }}</a></span><span v-if="pub.doi != ''">&nbsp;<div data-badge-popover="bottom" style="display: inline-block;" data-badge-type="4" v-bind:data-doi="pub.doi" data-hide-no-mentions="true" class="altmetric-embed"></div></span></li>
+        </div>
+      </ul>
+    </div>
 </div>
 <!-- {% endraw %} -->
 
