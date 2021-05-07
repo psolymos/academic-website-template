@@ -43,16 +43,14 @@ author_profile: true
     <p>{{ show }}</p>
     <div v-for="sof in softw">
         <h3>{{ sof.name }}</h3>
-        <ul class="publist">
-          <li class="publist">
+        <ul class="softlist">
+          <li class="softlist">
           {{ sof.description }}
           </li>
           <li class="publist">
           <a v-bind:href="sof.link">{{ sof.type }}</a> / {{ sof.domain }}
           </li>
         </ul>
-        <p><small><a v-bind:href="sof.link">{{ sof.type }}</a> / {{ sof.domain }}</small></p>
-        <p>{{ sof.description }}</p>
     </div>
 </div>
 <!-- {% endraw %} -->

@@ -11,6 +11,9 @@ ul.publist {
 li.publist {
   margin-bottom: 1.5em;
 }
+ul.softlist {
+  list-style: none;
+}
 
 /* Customize the label (the container) */
 .container {
