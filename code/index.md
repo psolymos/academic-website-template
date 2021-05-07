@@ -74,7 +74,7 @@ author_profile: true
 <!-- {% endraw %} -->
 
 <script>
-
+// publication list
 var p = [
         {% for ms in site.data.publications %}{
           "id": "{{ ms.id }}",
@@ -92,9 +92,9 @@ var p = [
           "doi": "{{ ms.doi }}"
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}];
-
+// unique years
 var yrs = [...new Set(p.map(a => a.year))].sort().reverse();
-
+//vue app
 const app = Vue.createApp({
   data: () => ({
     yearslider: {
@@ -153,10 +153,9 @@ const app = Vue.createApp({
     }
   }
 })
-
+// slider component
 app.component('Slider', VueformSlider)
 app.mount('#app')
-
 </script>
 
 <style>
