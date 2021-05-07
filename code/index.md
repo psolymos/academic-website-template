@@ -40,14 +40,13 @@ author_profile: true
         </li>
       </ul>
     </div>
-    <p>{{ show }}</p>
     <div v-for="sof in softw">
         <h3>{{ sof.name }}</h3>
         <ul class="softlist">
-          <li class="softlist">
+          <li>
           {{ sof.description }}
           </li>
-          <li class="publist">
+          <li>
           <a v-bind:href="sof.link">{{ sof.type }}</a> / {{ sof.domain }}
           </li>
         </ul>
