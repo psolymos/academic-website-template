@@ -74,21 +74,17 @@ const app = Vue.createApp({
   computed: {
     softw: function () {
         var x = [];
-        console.log(this.swa.lenth + " length swa");
-        console.log(this.swa);
-        console.log(sw.lenth + " length sw");
-        console.log(sw);
         for (i = 0; i < this.swa.length; i++) {
             let add = false;
             if (!this.show.rpkg && !this.show.stata && !this.show.gui && !this.show.statistics && !this.show.psychology) {
                 add = true;
             } else {
                 if (this.show.rpkg && this.swa[i].type == "R package") {
-                    //add = true;
+                    add = true;
                     console.log(this.swa[i].type);
                 }
                 if (this.show.stata && this.swa[i].type == "Stata module") {
-                    //add = true;
+                    add = true;
                     console.log(this.swa[i].type);
                 }
             }
