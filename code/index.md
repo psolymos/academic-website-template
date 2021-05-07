@@ -74,30 +74,10 @@ const app = Vue.createApp({
   computed: {
     softw: function () {
         var x = [];
-/*        for (i = 0; i < this.swa.length; i++) {
-            let add = false;
-            // none is checked: show all
-            if (!this.show.rpkg && !this.show.stata && !this.show.gui &&!this.show.statistics && !this.show.psychology) {
-              add = true;
-            } else {
-              // type
-              if (this.show.rpkg && this.swa[i].type == "R package")
-                  add = true;
-              if (this.show.stata && this.swa[i].type == "Stats module")
-                  add = true;
-              if (this.show.gui && this.swa[i].type == "GUI")
-                  add = true;
-              // domain
-              if (this.show.statistics && this.swa[i].domain == "Statistics")
-                  add = true;
-              if (this.show.psychology && this.swa[i].domain == "Psychology")
-                  add = true;
-            }
-            if (add)
-                x[i] = this.swa[i];
-        } */
         console.log(this.swa.lenth + " length swa");
         console.log(this.swa);
+        console.log(sw.lenth + " length sw");
+        console.log(sw);
         for (i = 0; i < this.swa.length; i++) {
             let add = false;
             if (!this.show.rpkg && !this.show.stata && !this.show.gui && !this.show.statistics && !this.show.psychology) {
