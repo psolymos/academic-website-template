@@ -1,0 +1,50 @@
+- name: regmedint
+  description: Regression-based causal mediation analysis with a treatment-mediator interaction term.
+  link: https://cran.r-project.org/web/packages/regmedint/index.html
+  type: R package
+  domain: Statistics
+- name: Qualtrics Mousetracker
+  description: Software in R, Javascript, and Qualtrics to design and analyze psychology experiments that use fine-grained mouse-tracking measures of perceptual category competition.
+  link: https://osf.io/st2ef/
+  type: R package
+  domain: Psychology
+- name: PublicationBias
+  description: Conducts sensitivity analysis for publication bias in meta-analyses.
+  link: https://cran.r-project.org/web/packages/PublicationBias/index.html
+  type: R package
+  domain: Statistics
+- name: MetaUtility
+  description: Contains functions to estimate the proportion of effects stronger than a threshold of scientific importance, to make effect size conversions, and to compute and format estimates and inference.
+  link: https://cran.r-project.org/web/packages/MetaUtility/index.html
+  type: R package
+  domain: Statistics
+- name: EValue
+  description: Conducts sensitivity analysis for unmeasured confounding for observational studies and meta-analysis, and conducts analogous sensitivity analyses for selection bias.
+  link: https://cran.r-project.org/web/packages/EValue/index.html
+  type: R package
+  domain: Statistics
+- name: EVALUE
+  description: Calculates the E-value, a measure of sensitivity to unmeasured confounding.
+  link: https://ideas.repec.org/c/boc/bocode/s458592.html
+  type: Stata module
+  domain: Statistics
+- name: E-value calculator website
+  description: Calculates the E-value, a measure of sensitivity to unmeasured confounding.
+  link: http://www.evalue-calculator.com/
+  type: R package
+  domain: Statistics
+- name: NRejections
+  description: Computes metrics of outcome-wide evidence strength for studies testing multiple correlated outcomes.
+  link: https://cran.r-project.org/web/packages/NRejections/index.html
+  type: R package
+  domain: Statistics
+- name: Replicate
+  description: Conducts statistical analyses for multisite replication projects.
+  link: https://cran.r-project.org/web/packages/Replicate/index.html
+  type: R package
+  domain: Statistics
+- name: SimTimeVar
+  description: Simulates a longitudinal dataset with time-varying covariates with user-specified correlation structure.
+  link: https://cran.r-project.org/web/packages/SimTimeVar/index.html
+  type: R package
+  domain: Statistics
