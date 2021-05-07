@@ -77,13 +77,13 @@ const app = Vue.createApp({
         for (i = 0; i < this.s.length; i++) {
             let add = false;
             // none is checked: show all
-            if (!this.show.rpkg && !this.show.stats && !this.show.gui &&!this.show.statistics && !this.show.psychology) {
+            if (!this.show.rpkg && !this.show.stata && !this.show.gui &&!this.show.statistics && !this.show.psychology) {
               add = true;
             } else {
               // type
               if (this.show.rpkg && this.s[i].type == "R package")
                   add = true;
-              if (this.show.stats && this.s[i].type == "Stats module")
+              if (this.show.stata && this.s[i].type == "Stats module")
                   add = true;
               // authorship
               if (this.show.gui && this.s[i].type == "GUI")
@@ -101,7 +101,5 @@ const app = Vue.createApp({
     }
   }
 })
-// slider component
-app.component('Slider', VueformSlider)
 app.mount('#app')
 </script>
