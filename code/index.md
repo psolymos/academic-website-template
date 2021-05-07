@@ -96,6 +96,8 @@ const app = Vue.createApp({
             if (add)
                 x[i] = this.swa[i];
         } */
+        console.log(this.swa.lenth + " length swa");
+        console.log(this.swa);
         for (i = 0; i < this.swa.length; i++) {
             let add = false;
             if (!this.show.rpkg && !this.show.stata && !this.show.gui && !this.show.statistics && !this.show.psychology) {
@@ -103,11 +105,11 @@ const app = Vue.createApp({
             } else {
                 if (this.show.rpkg && this.swa[i].type == "R package") {
                     //add = true;
-                    console.log(this.swa[i].type)
+                    console.log(this.swa[i].type);
                 }
                 if (this.show.stata && this.swa[i].type == "Stata module") {
                     //add = true;
-                    console.log(this.swa[i].type)
+                    console.log(this.swa[i].type);
                 }
             }
             if (add)
