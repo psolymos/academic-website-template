@@ -40,6 +40,8 @@ author_profile: true
         </li>
       </ul>
     </div>
+    <p>{{ show }}</p>
+    <p>{{ softw }}</p>
     <div v-for="s in softw">
         <h3>{{ s.name }}</h3>
         <p>{{ s.description }}</p>
@@ -50,7 +52,7 @@ author_profile: true
 
 <script>
 // software list
-var s = [
+var sw = [
         {% for s in site.data.software %}{
           "name": "{{ s.name }}",
           "description": "{{ s.description }}",
@@ -62,7 +64,7 @@ var s = [
 //vue app
 const app = Vue.createApp({
   data: () => ({
-    s: s,
+    s: sw,
     show: {
         rpkg: false,
         stata: false,
@@ -85,7 +87,6 @@ const app = Vue.createApp({
                   add = true;
               if (this.show.stata && this.s[i].type == "Stats module")
                   add = true;
-              // authorship
               if (this.show.gui && this.s[i].type == "GUI")
                   add = true;
               // domain
