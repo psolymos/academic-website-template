@@ -81,15 +81,13 @@ const app = Vue.createApp({
             } else {
                 if (this.show.rpkg && this.swa[i].type == "R package") {
                     add = true;
-                    console.log(this.swa[i].type);
                 }
                 if (this.show.stata && this.swa[i].type == "Stata module") {
                     add = true;
-                    console.log(this.swa[i].type);
                 }
             }
             if (add)
-                x[i] = this.swa[i];
+                x.push(this.swa[i]);
         }
         return x
     }
