@@ -98,8 +98,18 @@ const app = Vue.createApp({
         } */
         for (i = 0; i < this.swa.length; i++) {
             let add = false;
-            if (!this.show.rpkg && !this.show.stata && !this.show.gui && !this.show.statistics && !this.show.psychology)
+            if (!this.show.rpkg && !this.show.stata && !this.show.gui && !this.show.statistics && !this.show.psychology) {
                 add = true;
+            } else {
+                if (this.show.rpkg && this.swa[i].type == "R package") {
+                    //add = true;
+                    console.log(this.swa[i].type)
+                }
+                if (this.show.stata && this.swa[i].type == "Stata module") {
+                    //add = true;
+                    console.log(this.swa[i].type)
+                }
+            }
             if (add)
                 x[i] = this.swa[i];
         }
