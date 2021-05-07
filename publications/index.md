@@ -74,13 +74,7 @@ author_profile: true
         <h2>{{ yr }}</h2>
         <ul class="publist">
             <div v-for="pub in publ.filter(a => (a.year === yr))">
-            <li class="publist">{{ pub.text }}
-            <div v-if="pub.preprint">&mdash; <a href="{{ pub.preprint }}">Preprint</a></div>
-            <div v-if="pub.datarepo">&mdash; <a href="{{ pub.datarepo }}"></a></div>
-            <div v-if="pub.rpackagename">&mdash; <a href="{{ pub.rpackagelink }}">{{ pub.rpackagename }}</a></div>
-            <div v-if="pub.webappname">&mdash; <a href="{{ pub.webapplink }}">{{ pub.webappname }}</a></div>
-            <div v-if="pub.doi"><div data-badge-popover="bottom" style="display: inline-block;" data-badge-type="4" data-doi="{{ pub.doi }}" data-hide-no-mentions="true" class="altmetric-embed"></div></div>
-            </li>
+              <li class="publist">{{ pub.text }}<div v-if="pub.preprint">&mdash; <a v-bind:href="pub.preprint">Preprint</a></div><div v-if="pub.datarepo">&mdash; <a v-bind:href="pub.datarepo"></a></div><div v-if="pub.rpackagename">&mdash; <a v-bind:href="pub.rpackagelink">{{ pub.rpackagename }}</a></div><div v-if="pub.webappname">&mdash; <a v-bind:href="pub.webapplink">{{ pub.webappname }}</a></div><div v-if="pub.doi"><div data-badge-popover="bottom" style="display: inline-block;" data-badge-type="4" v-bind:data-doi="pub.doi" data-hide-no-mentions="true" class="altmetric-embed"></div></div></li>
             </div>
         </ul>
       </div>
