@@ -31,7 +31,7 @@
 - name: E-value calculator website
   description: Calculates the E-value, a measure of sensitivity to unmeasured confounding.
   link: http://www.evalue-calculator.com/
-  type: R package
+  type: GUI
   domain: Statistics
 - name: NRejections
   description: Computes metrics of outcome-wide evidence strength for studies testing multiple correlated outcomes.

@@ -4,147 +4,98 @@ layout: academic
 author_profile: true
 ---
 
-
 <!-- {% raw %} -->
 <div id="app">
-
-    <p><br></p>
-    <p style="width:60%;">
-        <Slider
-          v-model="yearslider.value"
-          v-bind="yearslider"
-        ></Slider>
-    </p>
-
-    <ul>
+    <div>
+      <ul>
         <li class="checkboxlist">
-        Type
-        <label class="container">Empirical
-            <input type="checkbox" v-model="show.empirical">
-            <span class="checkmark"></span>
-        </label>
-        <label class="container">Methods
-            <input type="checkbox" v-model="show.methods">
+        <label class="container">R package
+            <input type="checkbox" v-model="show.rpkg">
             <span class="checkmark"></span>
         </label>
         </li>
         <li class="checkboxlist">
-            Authorship
-            <label class="container">Fist
-                <input type="checkbox" v-model="show.first">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">Senior
-                <input type="checkbox" v-model="show.last">
+        <label class="container">Stata module
+            <input type="checkbox" v-model="show.stata">
+            <span class="checkmark"></span>
+        </label>
+        </li>
+        <li class="checkboxlist">
+            <label class="container">GUI
+                <input type="checkbox" v-model="show.gui">
                 <span class="checkmark"></span>
             </label>
         </li>
         <li class="checkboxlist">
-            Status
-            <label class="container">Published
-                <input type="checkbox" v-model="show.published">
-                <span class="checkmark"></span>
-            </label>
-            <label class="container">In preparation
-                <input type="checkbox" v-model="show.inprep">
+            <label class="container">Statistics
+                <input type="checkbox" v-model="show.statistics">
                 <span class="checkmark"></span>
             </label>
         </li>
-    </ul>
-    
-      <div class="output">Year range: {{ yearslider.value }}</div>
-      <div>All years: {{ allyears }}</div>
-      <div>Show: {{ show }}</div>
-      
-      
-
-      <div v-for="yr in [...new Set(publ.map(a => a.year))].sort().reverse()">
-        <h2>{{ yr }}</h2>
-        <ul class="publist">
-            <div v-for="pub in publ.filter(a => (a.year === yr))">
-            <li class="publist">{{ pub.text }} &ndash; links and stuff comes here ...</li>
-            </div>
-        </ul>
-      </div>
-  
+        <li class="checkboxlist">
+            <label class="container">Psychology
+                <input type="checkbox" v-model="show.psychology">
+                <span class="checkmark"></span>
+            </label>
+        </li>
+      </ul>
+    </div>
+    <div v-for="s in softw">
+        <h3>{{ s.name }}</h3>
+        <p>{{ s.description }}</p>
+        <p><a v-bind:href="s.link">{{ s.type }}</a> / {{ s.domain }}</p>
+    </div>
 </div>
 <!-- {% endraw %} -->
 
 <script>
-// publication list
-var p = [
-        {% for ms in site.data.publications %}{
-          "id": "{{ ms.id }}",
-          "text": "{{ ms.text }}",
-          "year": {{ ms.year }},
-          "type": "{{ ms.type }}",
-          "authorship": "{{ ms.authorship }}",
-          "status": "{{ ms.status }}",
-          "preprint": "{{ ms.preprint }}",
-          "datarepo": "{{ ms.datarepo }}",
-          "rpackagename": "{{ ms.rpackagename }}",
-          "rpackagelink": "{{ ms.rpackagelink }}",
-          "webappname": "{{ ms.webappname }}",
-          "webapplink": "{{ ms.webapplink }}",
-          "doi": "{{ ms.doi }}"
+// software list
+var s = [
+        {% for s in site.data.software %}{
+          "name": "{{ s.name }}",
+          "description": "{{ s.description }}",
+          "link": "{{ s.link }}",
+          "type": "{{ s.type }}",
+          "domain": "{{ s.domain }}"
         }{% unless forloop.last %},{% endunless %}
       {% endfor %}];
-// unique years
-var yrs = [...new Set(p.map(a => a.year))].sort().reverse();
 //vue app
 const app = Vue.createApp({
   data: () => ({
-    yearslider: {
-        value: [Math.min(...yrs), Math.max(...yrs)],
-        min: Math.min(...yrs),
-        max: Math.max(...yrs),
-    },
-    pubs: p,
-    allyears: yrs,
+    s: s,
     show: {
-        empirical: false,
-        methods: false,
-        first: false,
-        last: false,
-        published: false,
-        inprep: false,
+        rpkg: false,
+        stata: false,
+        gui: false,
+        statistics: false,
+        psychology: false,
     },
   }),
   computed: {
-    publ: function () {
+    softw: function () {
         var x = [];
-        for (i = 0; i < this.pubs.length; i++) {
+        for (i = 0; i < this.s.length; i++) {
             let add = false;
             // none is checked: show all
-            if (!this.show.empirical && !this.show.methods && !this.show.first &&!this.show.last && !this.show.published && !this.show.inprep) {
+            if (!this.show.rpkg && !this.show.stats && !this.show.gui &&!this.show.statistics && !this.show.psychology) {
               add = true;
             } else {
               // type
-              if (this.show.empirical && this.pubs[i].type == "empirical")
+              if (this.show.rpkg && this.s[i].type == "R package")
                   add = true;
-              if (this.show.methods && this.pubs[i].type == "methods")
+              if (this.show.stats && this.s[i].type == "Stats module")
                   add = true;
               // authorship
-              if (this.show.first && this.pubs[i].authorship == "first")
+              if (this.show.gui && this.s[i].type == "GUI")
                   add = true;
-              if (this.show.last && this.pubs[i].authorship == "last")
+              // domain
+              if (this.show.statistics && this.s[i].domain == "Statistics")
                   add = true;
-              // status
-              if (this.show.published && this.pubs[i].status == "published")
+              if (this.show.psychology && this.s[i].domain == "Psychology")
                   add = true;
-              if (this.show.inprep && this.pubs[i].status != "published")
-                  add = true;
-            }
-            if (add) {
-                if (this.pubs[i].year < this.yearslider.value[0]) {
-                    add = false;
-                }
-                if (this.pubs[i].year > this.yearslider.value[1]) {
-                    add = false;
-                }
             }
             if (add)
-                x[i] = this.pubs[i];
+                x[i] = this.s[i];
         }
         return x
     }
