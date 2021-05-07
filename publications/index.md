@@ -135,7 +135,7 @@ const app = Vue.createApp({
                 }
             }
             if (add)
-                x[i] = this.pubs[i];
+                x.push(this.pubs[i]);
         }
         return x
     }

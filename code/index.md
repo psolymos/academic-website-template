@@ -43,7 +43,16 @@ author_profile: true
     <p>{{ show }}</p>
     <div v-for="sof in softw">
         <h3>{{ sof.name }}</h3>
-        <p>{{ sof.description }} / <a v-bind:href="sof.link">{{ sof.type }}</a> / {{ sof.domain }}</p>
+        <ul class="publist">
+          <li class="publist">
+          {{ sof.description }}
+          </li>
+          <li class="publist">
+          <a v-bind:href="sof.link">{{ sof.type }}</a> / {{ sof.domain }}
+          </li>
+        </ul>
+        <p><small><a v-bind:href="sof.link">{{ sof.type }}</a> / {{ sof.domain }}</small></p>
+        <p>{{ sof.description }}</p>
     </div>
 </div>
 <!-- {% endraw %} -->
@@ -79,12 +88,16 @@ const app = Vue.createApp({
             if (!this.show.rpkg && !this.show.stata && !this.show.gui && !this.show.statistics && !this.show.psychology) {
                 add = true;
             } else {
-                if (this.show.rpkg && this.swa[i].type == "R package") {
+                if (this.show.rpkg && this.swa[i].type == "R package")
                     add = true;
-                }
-                if (this.show.stata && this.swa[i].type == "Stata module") {
+                if (this.show.stata && this.swa[i].type == "Stata module")
                     add = true;
-                }
+                if (this.show.gui && this.swa[i].type == "GUI")
+                    add = true;
+                if (this.show.statistics && this.swa[i].domain == "Statistics")
+                    add = true;
+                if (this.show.psychology && this.swa[i].domain == "Psychology")
+                    add = true;
             }
             if (add)
                 x.push(this.swa[i]);
