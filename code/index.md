@@ -70,11 +70,11 @@ const app = Vue.createApp({
   data: () => ({
     swa: sw,
     show: {
-        rpkg: false,
-        stata: false,
-        gui: false,
-        statistics: false,
-        psychology: false,
+        rpkg: true,
+        stata: true,
+        gui: true,
+        statistics: true,
+        psychology: true,
     },
   }),
   computed: {
@@ -82,20 +82,16 @@ const app = Vue.createApp({
         var x = [];
         for (i = 0; i < this.swa.length; i++) {
             let add = false;
-            if (!this.show.rpkg && !this.show.stata && !this.show.gui && !this.show.statistics && !this.show.psychology) {
+            if (this.show.rpkg && this.swa[i].type == "R package")
                 add = true;
-            } else {
-                if (this.show.rpkg && this.swa[i].type == "R package")
-                    add = true;
-                if (this.show.stata && this.swa[i].type == "Stata module")
-                    add = true;
-                if (this.show.gui && this.swa[i].type == "GUI")
-                    add = true;
-                if (this.show.statistics && this.swa[i].domain == "Statistics")
-                    add = true;
-                if (this.show.psychology && this.swa[i].domain == "Psychology")
-                    add = true;
-            }
+            if (this.show.stata && this.swa[i].type == "Stata module")
+                add = true;
+            if (this.show.gui && this.swa[i].type == "GUI")
+                add = true;
+            if (this.show.statistics && this.swa[i].domain == "Statistics")
+                add = true;
+            if (this.show.psychology && this.swa[i].domain == "Psychology")
+                add = true;
             if (add)
                 x.push(this.swa[i]);
         }
