@@ -7,6 +7,7 @@ author_profile: true
 <!-- {% raw %} -->
 <div id="app">
     <div>
+      <p>Filter to software meeting any of the following criteria:</p>
       <ul>
         <li class="checkboxlist">
         <label class="container">R package
