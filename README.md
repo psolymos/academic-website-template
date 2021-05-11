@@ -93,7 +93,7 @@ Most of the fields are self explanatory, here are the ones that are currently us
 
 The page displays a range slider for filtering publications by year. By default all years are displayed.
 
-There are also check boxes for publication type, authorship and status. By default none of the boxes are checked and all the publications are displayed. When checkboxes are checked, only a subset where the checked criteria evaluate to true will be displayed within the requested date range.
+There are also check boxes for publication type, authorship and status. By default all of the boxes are checked and all the publications are displayed. When checkboxes are unchecked, only a corresponding subset will be displayed within the requested range of years.
 
 ### Software
 

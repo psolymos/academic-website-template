@@ -14,6 +14,7 @@ author_profile: true
             v-bind="yearslider"
           ></Slider>
       </p>
+      <p>Filter to papers meeting any of the following criteria:</p>
       <ul>
         <li class="checkboxlist">
         Type
@@ -93,12 +94,12 @@ const app = Vue.createApp({
     pubs: p,
     allyears: yrs,
     show: {
-        empirical: false,
-        methods: false,
-        first: false,
-        last: false,
-        published: false,
-        inprep: false,
+        empirical: true,
+        methods: true,
+        first: true,
+        last: true,
+        published: true,
+        inprep: true,
     },
   }),
   computed: {
@@ -106,26 +107,21 @@ const app = Vue.createApp({
         var x = [];
         for (i = 0; i < this.pubs.length; i++) {
             let add = false;
-            // none is checked: show all
-            if (!this.show.empirical && !this.show.methods && !this.show.first &&!this.show.last && !this.show.published && !this.show.inprep) {
-              add = true;
-            } else {
-              // type
-              if (this.show.empirical && this.pubs[i].type == "empirical")
-                  add = true;
-              if (this.show.methods && this.pubs[i].type == "methods")
-                  add = true;
-              // authorship
-              if (this.show.first && this.pubs[i].authorship == "first")
-                  add = true;
-              if (this.show.last && this.pubs[i].authorship == "last")
-                  add = true;
-              // status
-              if (this.show.published && this.pubs[i].status == "published")
-                  add = true;
-              if (this.show.inprep && this.pubs[i].status != "published")
-                  add = true;
-            }
+            // type
+            if (this.show.empirical && this.pubs[i].type == "empirical")
+                add = true;
+            if (this.show.methods && this.pubs[i].type == "methods")
+                add = true;
+            // authorship
+            if (this.show.first && this.pubs[i].authorship == "first")
+                add = true;
+            if (this.show.last && this.pubs[i].authorship == "last")
+                add = true;
+            // status
+            if (this.show.published && this.pubs[i].status == "published")
+                add = true;
+            if (this.show.inprep && this.pubs[i].status != "published")
+                add = true;
             if (add) {
                 if (this.pubs[i].year < this.yearslider.value[0]) {
                     add = false;
