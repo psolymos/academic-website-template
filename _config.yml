@@ -108,13 +108,16 @@ author:
   email            : "jane.doe@uni.edu"
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
+  github           : "mayamathur"
+  twitter          : "_MMathur"
+  googlescholar    : "vmuNN1sAAAAJ"
+  opensciencefr    : "e9tg8"
   bitbucket        :
   codepen          :
   dribbble         :
   flickr           :
   facebook         :
   foursquare       :
-  github           :
   gitlab           :
   google_plus      :
   keybase          :
@@ -126,7 +129,6 @@ author:
   stackoverflow    : # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
   steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
-  twitter          :
   vine             :
   weibo            :
   xing             :

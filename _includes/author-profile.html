@@ -257,6 +257,22 @@
         </li>
       {% endif %}
 
+      {% if author.googlescholar %}
+        <li>
+          <a href="https://scholar.google.com/citations?user={{ author.googlescholar }}&hl=en" itemprop="sameAs">
+            <i class="ai ai-google-scholar ai-3x" aria-hidden="true"></i> Scholar
+          </a>
+        </li>
+      {% endif %}
+
+      {% if author.opensciencefr %}
+        <li>
+          <a href="https://osf.io/{{ author.opensciencefr }}" itemprop="sameAs">
+            <i class="ai ai-osf ai-3x" aria-hidden="true"></i> OSF
+          </a>
+        </li>
+      {% endif %}
+
       {% include author-profile-custom-links.html %}
     </ul>
   </div>
